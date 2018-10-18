@@ -37,6 +37,11 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
+def delete()
+  sql = "DELETE FROM artists WHERE id $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
 
 # Edit Artists/Albums - don't know how to test.
   def update(artist)
